@@ -7,6 +7,8 @@
 //
 
 #import "APViewController.h"
+
+#import "AudioToolbox/AudioToolbox.h"
 #import "APCrossFadePlayer.h"
 #import "APSoundEntry.h"
 
@@ -82,7 +84,14 @@ SYNTHESIZE(preset);
     
     _session = [AVAudioSession sharedInstance];
     NSError* errRet = nil;
-    [self.session setCategory: AVAudioSessionCategoryAmbient error: &errRet];
+    [self.session setCategory: AVAudioSessionCategoryPlayback error: &errRet];
+
+    UInt32 allowMixing = true;
+    AudioSessionSetProperty (
+                             kAudioSessionProperty_OverrideCategoryMixWithOthers,  // 1
+                             sizeof (allowMixing),                                 // 2
+                             &allowMixing                                          // 3
+                             );
     [self.session setActive: YES error: &errRet];
     self.player = [APCrossFadePlayer new];
 }

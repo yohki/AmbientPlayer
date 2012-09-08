@@ -29,6 +29,7 @@
 		40A206BE15F67791004BE2E1 /* AmbientPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A206BD15F67791004BE2E1 /* AmbientPlayerTests.m */; };
 		40A206C815F67C19004BE2E1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A206C715F67C19004BE2E1 /* AVFoundation.framework */; };
 		40A206D715F682E0004BE2E1 /* ocean.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 40A206D615F682E0004BE2E1 /* ocean.m4a */; };
+		7EC929BC15FB475200A5C4A7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC929BB15FB475200A5C4A7 /* AudioToolbox.framework */; };
 		7EDE0C0415FB108200789400 /* APCrossFadePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDE0C0315FB108200789400 /* APCrossFadePlayer.m */; };
 		7EDE0C0615FB180000789400 /* sea.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7EDE0C0515FB180000789400 /* sea.m4a */; };
 		7EDE0C0C15FB234C00789400 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EDE0C0B15FB234C00789400 /* iPhone.storyboard */; };
@@ -77,6 +78,7 @@
 		40A206BD15F67791004BE2E1 /* AmbientPlayerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AmbientPlayerTests.m; sourceTree = "<group>"; };
 		40A206C715F67C19004BE2E1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = ../../../../../../System/Library/Frameworks/AVFoundation.framework; sourceTree = "<group>"; };
 		40A206D615F682E0004BE2E1 /* ocean.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = ocean.m4a; sourceTree = "<group>"; };
+		7EC929BB15FB475200A5C4A7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		7EDE0C0215FB108200789400 /* APCrossFadePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APCrossFadePlayer.h; sourceTree = "<group>"; };
 		7EDE0C0315FB108200789400 /* APCrossFadePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APCrossFadePlayer.m; sourceTree = "<group>"; };
 		7EDE0C0515FB180000789400 /* sea.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = sea.m4a; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EC929BC15FB475200A5C4A7 /* AudioToolbox.framework in Frameworks */,
 				AF57FF4015FB114000D8040A /* iAd.framework in Frameworks */,
 				40A2069015F67790004BE2E1 /* UIKit.framework in Frameworks */,
 				40A2069215F67790004BE2E1 /* Foundation.framework in Frameworks */,
@@ -164,12 +167,13 @@
 		40A2068E15F67790004BE2E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AF57FF3F15FB114000D8040A /* iAd.framework */,
+				7EC929BB15FB475200A5C4A7 /* AudioToolbox.framework */,
 				40A206C715F67C19004BE2E1 /* AVFoundation.framework */,
-				40A2068F15F67790004BE2E1 /* UIKit.framework */,
-				40A2069115F67790004BE2E1 /* Foundation.framework */,
 				40A2069315F67790004BE2E1 /* CoreGraphics.framework */,
+				40A2069115F67790004BE2E1 /* Foundation.framework */,
+				AF57FF3F15FB114000D8040A /* iAd.framework */,
 				40A206B015F67791004BE2E1 /* SenTestingKit.framework */,
+				40A2068F15F67790004BE2E1 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

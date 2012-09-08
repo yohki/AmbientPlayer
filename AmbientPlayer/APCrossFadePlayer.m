@@ -39,11 +39,9 @@ SYNTHESIZE(currentSoundName);
     self.duration = self.player1.duration;
     NSAssert(self.duration > kCrossFadeDuration, @"Sound duration %f should > %f", self.duration, kCrossFadeDuration);
     
-    UIBackgroundTaskIdentifier newTaskId = UIBackgroundTaskInvalid;
     BOOL playSucc = [self.player1 play];
     if (playSucc) {
         [self performSelector:@selector(startCrossFade) withObject:nil afterDelay:self.duration - kCrossFadeDuration];
-        newTaskId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:NULL];
     }
     return playSucc;
 }
