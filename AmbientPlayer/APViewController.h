@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-#import <iAd/iAd.h>
 
-@interface APViewController : UITableViewController <ADBannerViewDelegate, UITableViewDelegate, UITableViewDataSource> {
+@interface APViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource> {
     IBOutlet UIButton* _playButton;
 }
 

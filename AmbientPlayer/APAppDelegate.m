@@ -10,20 +10,27 @@
 
 #import "APViewController.h"
 
+#import "APBannerViewController.h"
+
 @implementation APAppDelegate
+{
+    APBannerViewController *_bannerViewController;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    // Override point for customization after application launch.
-//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-//        self.viewController = [[APViewController alloc] initWithNibName:@"APViewController_iPhone" bundle:nil];
-//    } else {
-//        self.viewController = [[APViewController alloc] initWithNibName:@"APViewController_iPad" bundle:nil];
-//    }
-//    self.window.rootViewController = self.viewController;
-//    [self.window makeKeyAndVisible];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    APViewController *apvc = [[APViewController alloc] init];
+    
+    _bannerViewController = [[APBannerViewController alloc] initWithContentViewController:apvc ];
+    
+    self.window.rootViewController = _bannerViewController;
+    [self.window makeKeyAndVisible];
     return YES;
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

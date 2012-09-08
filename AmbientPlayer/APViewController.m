@@ -17,27 +17,31 @@
 @property (nonatomic, strong) AVAudioSession* session;
 @property (nonatomic, strong) APCrossFadePlayer *player;
 @property (nonatomic, copy) NSArray *preset;
-@property(nonatomic, strong) IBOutlet UIView *contentView;
 
 @end
 
 #define SYNTHESIZE(propertyName) @synthesize propertyName = _ ## propertyName
 
 
-@implementation APViewController {
-    ADBannerView *_bannerView;
-}
+@implementation APViewController
 
 SYNTHESIZE(session);
 SYNTHESIZE(player);
 SYNTHESIZE(preset);
-SYNTHESIZE(contentView);
+
+- (id) init
+{
+    self = [super init];
+    if (self) {
+        [self initPreset];
+    }
+    return self;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [self initBanner];
         [self initPreset];
     }
     return self;
@@ -46,15 +50,9 @@ SYNTHESIZE(contentView);
 -(id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        [self initBanner];
         [self initPreset];
     }
     return self;
-}
-
--(void)initBanner {
-    _bannerView = [[ADBannerView alloc] init];
-    _bannerView.delegate = self;
 }
 
 -(void)initPreset {
@@ -68,45 +66,12 @@ SYNTHESIZE(contentView);
                    nil];
 }
 
-- (void)dealloc
-{
-    _bannerView.delegate = nil;
-}
-
-- (void)layoutAnimated:(BOOL)animated
-{
-    if (UIInterfaceOrientationIsPortrait(self.interfaceOrientation)) {
-        _bannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
-    } else {
-        _bannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierLandscape;
-    }
-    
-    CGRect contentFrame = self.view.bounds;
-    CGRect bannerFrame = _bannerView.frame;
-    if (_bannerView.bannerLoaded) {
-        contentFrame.size.height -= _bannerView.frame.size.height;
-        bannerFrame.origin.y = contentFrame.size.height;
-    } else {
-        bannerFrame.origin.y = contentFrame.size.height;
-    }
-    
-    [UIView animateWithDuration:animated ? 0.25 : 0.0 animations:^{
-        _contentView.frame = contentFrame;
-        [_contentView layoutIfNeeded];
-        _bannerView.frame = bannerFrame;
-    }];
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
-    
-    
-    //add iAd BannerView as subview
-    [self.view addSubview:_bannerView];
-    
+        
     _session = [AVAudioSession sharedInstance];
     NSError* errRet = nil;
     [self.session setCategory: AVAudioSessionCategoryPlayback error: &errRet];
@@ -127,10 +92,6 @@ SYNTHESIZE(contentView);
     // Release any retained subviews of the main view.
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [self layoutAnimated:NO];
-}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -139,26 +100,6 @@ SYNTHESIZE(contentView);
     } else {
         return YES;
     }
-}
-
-- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
-{
-    if (UIInterfaceOrientationIsPortrait(toInterfaceOrientation)) {
-        _bannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
-    } else {
-        _bannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierLandscape;
-    }
-    [self layoutAnimated:duration > 0.0];
-}
-
-- (void)bannerViewDidLoadAd:(ADBannerView *)banner
-{
-    [self layoutAnimated:YES];
-}
-
-- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
-{
-    [self layoutAnimated:YES];
 }
 
 
