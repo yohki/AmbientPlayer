@@ -23,4 +23,12 @@ SYNTHESIZE(fileName);
     return self;
 }
 
+- (id) initPresetWithTitle:(NSString *)title withFileName:(NSString *)fileName andImageFileName:(NSString *)imageFileName {
+    self = [self initPresetWithTitle:title withFileName:fileName];
+    if (self) {
+        self.imageFileName = imageFileName;
+    }
+    return self;
+}
+
 @end

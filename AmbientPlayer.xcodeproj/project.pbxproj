@@ -10,6 +10,11 @@
 		4018F06815F6D00600DB5B15 /* forest.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4018F06515F6D00600DB5B15 /* forest.m4a */; };
 		4018F06915F6D00600DB5B15 /* rain.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4018F06615F6D00600DB5B15 /* rain.m4a */; };
 		4018F06A15F6D00600DB5B15 /* stream.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4018F06715F6D00600DB5B15 /* stream.m4a */; };
+		405E060815FB381E00C93E26 /* rain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 405E060715FB381E00C93E26 /* rain.jpg */; };
+		405E061815FB3F5200C93E26 /* forest.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 405E061515FB3F5200C93E26 /* forest.jpg */; };
+		405E061915FB3F5200C93E26 /* ocean.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 405E061615FB3F5200C93E26 /* ocean.jpg */; };
+		405E061A15FB3F5200C93E26 /* stream.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 405E061715FB3F5200C93E26 /* stream.jpg */; };
+		405E061D15FB406900C93E26 /* sea.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 405E061C15FB406900C93E26 /* sea.jpg */; };
 		40A2069015F67790004BE2E1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A2068F15F67790004BE2E1 /* UIKit.framework */; };
 		40A2069215F67790004BE2E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A2069115F67790004BE2E1 /* Foundation.framework */; };
 		40A2069415F67790004BE2E1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A2069315F67790004BE2E1 /* CoreGraphics.framework */; };
@@ -47,6 +52,11 @@
 		4018F06515F6D00600DB5B15 /* forest.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = forest.m4a; sourceTree = "<group>"; };
 		4018F06615F6D00600DB5B15 /* rain.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = rain.m4a; sourceTree = "<group>"; };
 		4018F06715F6D00600DB5B15 /* stream.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = stream.m4a; sourceTree = "<group>"; };
+		405E060715FB381E00C93E26 /* rain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rain.jpg; sourceTree = "<group>"; };
+		405E061515FB3F5200C93E26 /* forest.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = forest.jpg; sourceTree = "<group>"; };
+		405E061615FB3F5200C93E26 /* ocean.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ocean.jpg; sourceTree = "<group>"; };
+		405E061715FB3F5200C93E26 /* stream.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stream.jpg; sourceTree = "<group>"; };
+		405E061C15FB406900C93E26 /* sea.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sea.jpg; sourceTree = "<group>"; };
 		40A2068B15F67790004BE2E1 /* AmbientPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmbientPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40A2068F15F67790004BE2E1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		40A2069115F67790004BE2E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -118,9 +128,22 @@
 			path = sound;
 			sourceTree = "<group>";
 		};
+		405E060515FB37EA00C93E26 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				405E061C15FB406900C93E26 /* sea.jpg */,
+				405E061515FB3F5200C93E26 /* forest.jpg */,
+				405E061615FB3F5200C93E26 /* ocean.jpg */,
+				405E061715FB3F5200C93E26 /* stream.jpg */,
+				405E060715FB381E00C93E26 /* rain.jpg */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		40A2068015F67790004BE2E1 = {
 			isa = PBXGroup;
 			children = (
+				405E060515FB37EA00C93E26 /* images */,
 				4018F06315F6AA0300DB5B15 /* sounds */,
 				40A2069515F67790004BE2E1 /* AmbientPlayer */,
 				40A206B615F67791004BE2E1 /* AmbientPlayerTests */,
@@ -281,6 +304,11 @@
 				7EDE0C0615FB180000789400 /* sea.m4a in Resources */,
 				7EDE0C0C15FB234C00789400 /* iPhone.storyboard in Resources */,
 				7EDE0C0F15FB238600789400 /* iPad.storyboard in Resources */,
+				405E060815FB381E00C93E26 /* rain.jpg in Resources */,
+				405E061815FB3F5200C93E26 /* forest.jpg in Resources */,
+				405E061915FB3F5200C93E26 /* ocean.jpg in Resources */,
+				405E061A15FB3F5200C93E26 /* stream.jpg in Resources */,
+				405E061D15FB406900C93E26 /* sea.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
