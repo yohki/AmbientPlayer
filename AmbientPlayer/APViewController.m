@@ -17,6 +17,8 @@
 @property (nonatomic, strong) AVAudioSession* session;
 @property (nonatomic, strong) APCrossFadePlayer *player;
 @property (nonatomic, copy) NSArray *preset;
+@property(nonatomic, strong) IBOutlet UIView *contentView;
+
 @end
 
 #define SYNTHESIZE(propertyName) @synthesize propertyName = _ ## propertyName
@@ -29,6 +31,7 @@
 SYNTHESIZE(session);
 SYNTHESIZE(player);
 SYNTHESIZE(preset);
+SYNTHESIZE(contentView);
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -52,9 +55,6 @@ SYNTHESIZE(preset);
 -(void)initBanner {
     _bannerView = [[ADBannerView alloc] init];
     _bannerView.delegate = self;
-    CGRect banner_frame = _bannerView.frame;
-    banner_frame.origin.y = 350;
-    _bannerView.frame = banner_frame;
 }
 
 -(void)initPreset {
@@ -71,6 +71,30 @@ SYNTHESIZE(preset);
 - (void)dealloc
 {
     _bannerView.delegate = nil;
+}
+
+- (void)layoutAnimated:(BOOL)animated
+{
+    if (UIInterfaceOrientationIsPortrait(self.interfaceOrientation)) {
+        _bannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
+    } else {
+        _bannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierLandscape;
+    }
+    
+    CGRect contentFrame = self.view.bounds;
+    CGRect bannerFrame = _bannerView.frame;
+    if (_bannerView.bannerLoaded) {
+        contentFrame.size.height -= _bannerView.frame.size.height;
+        bannerFrame.origin.y = contentFrame.size.height;
+    } else {
+        bannerFrame.origin.y = contentFrame.size.height;
+    }
+    
+    [UIView animateWithDuration:animated ? 0.25 : 0.0 animations:^{
+        _contentView.frame = contentFrame;
+        [_contentView layoutIfNeeded];
+        _bannerView.frame = bannerFrame;
+    }];
 }
 
 - (void)viewDidLoad
@@ -103,6 +127,10 @@ SYNTHESIZE(preset);
     // Release any retained subviews of the main view.
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self layoutAnimated:NO];
+}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -112,6 +140,27 @@ SYNTHESIZE(preset);
         return YES;
     }
 }
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    if (UIInterfaceOrientationIsPortrait(toInterfaceOrientation)) {
+        _bannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
+    } else {
+        _bannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierLandscape;
+    }
+    [self layoutAnimated:duration > 0.0];
+}
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+    [self layoutAnimated:YES];
+}
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+    [self layoutAnimated:YES];
+}
+
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
