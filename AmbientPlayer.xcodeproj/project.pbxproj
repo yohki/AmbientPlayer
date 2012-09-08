@@ -26,6 +26,7 @@
 		40A206BE15F67791004BE2E1 /* AmbientPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A206BD15F67791004BE2E1 /* AmbientPlayerTests.m */; };
 		40A206C815F67C19004BE2E1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A206C715F67C19004BE2E1 /* AVFoundation.framework */; };
 		40A206D715F682E0004BE2E1 /* ocean.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 40A206D615F682E0004BE2E1 /* ocean.m4a */; };
+		AF57FF4015FB114000D8040A /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF57FF3F15FB114000D8040A /* iAd.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		40A206BD15F67791004BE2E1 /* AmbientPlayerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AmbientPlayerTests.m; sourceTree = "<group>"; };
 		40A206C715F67C19004BE2E1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = ../../../../../../System/Library/Frameworks/AVFoundation.framework; sourceTree = "<group>"; };
 		40A206D615F682E0004BE2E1 /* ocean.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = ocean.m4a; sourceTree = "<group>"; };
+		AF57FF3F15FB114000D8040A /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF57FF4015FB114000D8040A /* iAd.framework in Frameworks */,
 				40A2069015F67790004BE2E1 /* UIKit.framework in Frameworks */,
 				40A2069215F67790004BE2E1 /* Foundation.framework in Frameworks */,
 				40A2069415F67790004BE2E1 /* CoreGraphics.framework in Frameworks */,
@@ -126,6 +129,7 @@
 		40A2068E15F67790004BE2E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF57FF3F15FB114000D8040A /* iAd.framework */,
 				40A206C715F67C19004BE2E1 /* AVFoundation.framework */,
 				40A2068F15F67790004BE2E1 /* UIKit.framework */,
 				40A2069115F67790004BE2E1 /* Foundation.framework */,
@@ -375,6 +379,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
