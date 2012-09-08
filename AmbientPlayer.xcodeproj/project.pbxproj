@@ -29,6 +29,7 @@
 		7EDE0C0C15FB234C00789400 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EDE0C0B15FB234C00789400 /* iPhone.storyboard */; };
 		7EDE0C0F15FB238600789400 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EDE0C0E15FB238600789400 /* iPad.storyboard */; };
 		7EDE0C1215FB2C4300789400 /* APSoundEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDE0C1115FB2C4300789400 /* APSoundEntry.m */; };
+		AF4E5D0B15FB376A001438B3 /* APRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4E5D0A15FB376A001438B3 /* APRecordViewController.m */; };
 		AF57FF4015FB114000D8040A /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF57FF3F15FB114000D8040A /* iAd.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,8 @@
 		7EDE0C0E15FB238600789400 /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
 		7EDE0C1015FB2C4300789400 /* APSoundEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APSoundEntry.h; sourceTree = "<group>"; };
 		7EDE0C1115FB2C4300789400 /* APSoundEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APSoundEntry.m; sourceTree = "<group>"; };
+		AF4E5D0915FB376A001438B3 /* APRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APRecordViewController.h; sourceTree = "<group>"; };
+		AF4E5D0A15FB376A001438B3 /* APRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APRecordViewController.m; sourceTree = "<group>"; };
 		AF57FF3F15FB114000D8040A /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -161,6 +164,8 @@
 				40A206A215F67790004BE2E1 /* APViewController.m */,
 				7EDE0C0E15FB238600789400 /* iPad.storyboard */,
 				7EDE0C0B15FB234C00789400 /* iPhone.storyboard */,
+				AF4E5D0915FB376A001438B3 /* APRecordViewController.h */,
+				AF4E5D0A15FB376A001438B3 /* APRecordViewController.m */,
 				40A2069615F67790004BE2E1 /* Supporting Files */,
 			);
 			path = AmbientPlayer;
@@ -315,6 +320,7 @@
 				40A206A315F67790004BE2E1 /* APViewController.m in Sources */,
 				7EDE0C0415FB108200789400 /* APCrossFadePlayer.m in Sources */,
 				7EDE0C1215FB2C4300789400 /* APSoundEntry.m in Sources */,
+				AF4E5D0B15FB376A001438B3 /* APRecordViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
