@@ -100,7 +100,7 @@
 				40A206D615F682E0004BE2E1 /* ocean.m4a */,
 			);
 			name = sounds;
-			path = AmbientPlayer;
+			path = sound;
 			sourceTree = "<group>";
 		};
 		40A2068015F67790004BE2E1 = {
