@@ -26,6 +26,8 @@
 		40A206BE15F67791004BE2E1 /* AmbientPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A206BD15F67791004BE2E1 /* AmbientPlayerTests.m */; };
 		40A206C815F67C19004BE2E1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A206C715F67C19004BE2E1 /* AVFoundation.framework */; };
 		40A206D715F682E0004BE2E1 /* ocean.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 40A206D615F682E0004BE2E1 /* ocean.m4a */; };
+		7EDE0C0415FB108200789400 /* APCrossFadePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDE0C0315FB108200789400 /* APCrossFadePlayer.m */; };
+		7EDE0C0615FB180000789400 /* sea.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7EDE0C0515FB180000789400 /* sea.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,9 @@
 		40A206BD15F67791004BE2E1 /* AmbientPlayerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AmbientPlayerTests.m; sourceTree = "<group>"; };
 		40A206C715F67C19004BE2E1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = ../../../../../../System/Library/Frameworks/AVFoundation.framework; sourceTree = "<group>"; };
 		40A206D615F682E0004BE2E1 /* ocean.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = ocean.m4a; sourceTree = "<group>"; };
+		7EDE0C0215FB108200789400 /* APCrossFadePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APCrossFadePlayer.h; sourceTree = "<group>"; };
+		7EDE0C0315FB108200789400 /* APCrossFadePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APCrossFadePlayer.m; sourceTree = "<group>"; };
+		7EDE0C0515FB180000789400 /* sea.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = sea.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +100,10 @@
 			isa = PBXGroup;
 			children = (
 				4018F06515F6D00600DB5B15 /* forest.m4a */,
-				4018F06615F6D00600DB5B15 /* rain.m4a */,
-				4018F06715F6D00600DB5B15 /* stream.m4a */,
 				40A206D615F682E0004BE2E1 /* ocean.m4a */,
+				4018F06615F6D00600DB5B15 /* rain.m4a */,
+				7EDE0C0515FB180000789400 /* sea.m4a */,
+				4018F06715F6D00600DB5B15 /* stream.m4a */,
 			);
 			name = sounds;
 			path = sound;
@@ -140,10 +146,12 @@
 			children = (
 				40A2069E15F67790004BE2E1 /* APAppDelegate.h */,
 				40A2069F15F67790004BE2E1 /* APAppDelegate.m */,
+				7EDE0C0215FB108200789400 /* APCrossFadePlayer.h */,
+				7EDE0C0315FB108200789400 /* APCrossFadePlayer.m */,
 				40A206A115F67790004BE2E1 /* APViewController.h */,
 				40A206A215F67790004BE2E1 /* APViewController.m */,
-				40A206A415F67790004BE2E1 /* APViewController_iPhone.xib */,
 				40A206A715F67791004BE2E1 /* APViewController_iPad.xib */,
+				40A206A415F67790004BE2E1 /* APViewController_iPhone.xib */,
 				40A2069615F67790004BE2E1 /* Supporting Files */,
 			);
 			path = AmbientPlayer;
@@ -258,6 +266,7 @@
 				4018F06815F6D00600DB5B15 /* forest.m4a in Resources */,
 				4018F06915F6D00600DB5B15 /* rain.m4a in Resources */,
 				4018F06A15F6D00600DB5B15 /* stream.m4a in Resources */,
+				7EDE0C0615FB180000789400 /* sea.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +304,7 @@
 				40A2069C15F67790004BE2E1 /* main.m in Sources */,
 				40A206A015F67790004BE2E1 /* APAppDelegate.m in Sources */,
 				40A206A315F67790004BE2E1 /* APViewController.m in Sources */,
+				7EDE0C0415FB108200789400 /* APCrossFadePlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

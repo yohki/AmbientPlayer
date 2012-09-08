@@ -7,29 +7,32 @@
 //
 
 #import "APViewController.h"
+#import "APCrossFadePlayer.h"
 
 @interface APViewController ()
 
+@property (nonatomic, strong) AVAudioSession* session;
+@property (nonatomic, strong) APCrossFadePlayer *player;
 @end
 
+#define SYNTHESIZE(propertyName) @synthesize propertyName = _ ## propertyName
+
+
 @implementation APViewController
+
+SYNTHESIZE(session);
+SYNTHESIZE(player);
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    _session = [AVAudioSession sharedInstance];
+    self.session = [AVAudioSession sharedInstance];
     NSError* errRet = nil;
-    [_session setCategory: AVAudioSessionCategoryAmbient error: &errRet];
-    [_session setActive: YES error: &errRet];
-    
-    NSString* soundFilePath = [[NSBundle mainBundle] pathForResource:@"stream" ofType:@"m4a"];
-    NSURL* url = [[NSURL alloc] initFileURLWithPath:soundFilePath];
-    
-    _player =[[AVAudioPlayer alloc] initWithContentsOfURL:url error:&errRet];
-    [_player prepareToPlay];
-    [_player setVolume:1.0];
+    [self.session setCategory: AVAudioSessionCategoryAmbient error: &errRet];
+    [self.session setActive: YES error: &errRet];
+    self.player = [APCrossFadePlayer new];
 }
 
 - (void)viewDidUnload
@@ -48,7 +51,11 @@
 }
 
 - (IBAction)playButtonClicked:(id)sender {
-    [_player play];
+    if ([self.player isPlaying]) {
+        [self.player stop];
+    } else {
+        [self.player playWithSoundName:@"sea"];
+    }
 }
 
 @end

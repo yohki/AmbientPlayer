@@ -11,8 +11,6 @@
 
 @interface APViewController : UIViewController {
     IBOutlet UIButton* _playButton;
-    AVAudioSession* _session;
-    AVAudioPlayer* _player;
 }
 
 - (IBAction) playButtonClicked: (id)sender;
