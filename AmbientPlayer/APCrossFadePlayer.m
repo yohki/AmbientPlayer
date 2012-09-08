@@ -27,6 +27,9 @@ SYNTHESIZE(duration);
 SYNTHESIZE(currentSoundName);
 
 - (BOOL)playWithSoundName:(NSString *)soundName {
+    if ([self isPlaying]) {
+        [self stop];
+    }
     self.currentSoundName = soundName;
     self.player1 = [self newPlayer];
     [self.player1 setVolume:1.0];

@@ -10,11 +10,9 @@
 #import <AVFoundation/AVFoundation.h>
 #import <iAd/iAd.h>
 
-@interface APViewController : UIViewController <ADBannerViewDelegate>{
+@interface APViewController : UITableViewController <ADBannerViewDelegate, UITableViewDelegate, UITableViewDataSource> {
     IBOutlet UIButton* _playButton;
 }
-
-@property(nonatomic, strong) IBOutlet UIView *contentView;
 
 - (IBAction) playButtonClicked: (id)sender;
 
