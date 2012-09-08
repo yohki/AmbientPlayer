@@ -9,11 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface APViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource> {
-    IBOutlet UIButton* _playButton;
+@interface APViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
 }
 
-- (IBAction) playButtonClicked: (id)sender;
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
 
 @end
 

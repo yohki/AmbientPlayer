@@ -10,27 +10,11 @@
 
 #import "APViewController.h"
 
-#import "APBannerViewController.h"
-
 @implementation APAppDelegate
-{
-    APBannerViewController *_bannerViewController;
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.backgroundColor = [UIColor whiteColor];
-    
-    APViewController *apvc = [[APViewController alloc] init];
-    
-    _bannerViewController = [[APBannerViewController alloc] initWithContentViewController:apvc ];
-    
-    self.window.rootViewController = _bannerViewController;
-    [self.window makeKeyAndVisible];
     return YES;
-    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

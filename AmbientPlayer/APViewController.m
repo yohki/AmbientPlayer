@@ -8,15 +8,21 @@
 
 #import "APViewController.h"
 
+#import <iAd/iAd.h>
 #import "AudioToolbox/AudioToolbox.h"
 #import "APCrossFadePlayer.h"
 #import "APSoundEntry.h"
 
-@interface APViewController ()
+NSString * const BannerViewActionWillBegin = @"BannerViewActionWillBegin";
+NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
+
+
+@interface APViewController () <ADBannerViewDelegate>
 
 @property (nonatomic, strong) AVAudioSession* session;
 @property (nonatomic, strong) APCrossFadePlayer *player;
 @property (nonatomic, copy) NSArray *preset;
+@property (nonatomic, strong) ADBannerView *bannerView;
 
 @end
 
@@ -29,28 +35,12 @@ SYNTHESIZE(session);
 SYNTHESIZE(player);
 SYNTHESIZE(preset);
 
-- (id) init
-{
-    self = [super init];
-    if (self) {
-        [self initPreset];
-    }
-    return self;
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        [self initPreset];
-    }
-    return self;
-}
-
 -(id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
         [self initPreset];
+        self.bannerView = [ADBannerView new];
+        self.bannerView.delegate = self;
     }
     return self;
 }
@@ -71,7 +61,8 @@ SYNTHESIZE(preset);
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-        
+    [self.view addSubview:_bannerView];
+    
     _session = [AVAudioSession sharedInstance];
     NSError* errRet = nil;
     [self.session setCategory: AVAudioSessionCategoryPlayback error: &errRet];
@@ -100,6 +91,25 @@ SYNTHESIZE(preset);
     } else {
         return YES;
     }
+}
+
+- (void)viewDidLayoutSubviews
+{
+    if (UIInterfaceOrientationIsPortrait(self.interfaceOrientation)) {
+        self.bannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
+    } else {
+        self.bannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierLandscape;
+    }
+    CGRect contentFrame = self.view.bounds;
+    CGRect bannerFrame = self.bannerView.frame;
+    if (self.bannerView.bannerLoaded) {
+        contentFrame.size.height -= self.bannerView.frame.size.height;
+        bannerFrame.origin.y = contentFrame.size.height;
+    } else {
+        bannerFrame.origin.y = contentFrame.size.height;
+    }
+    self.tableView.frame = contentFrame;
+    self.bannerView.frame = bannerFrame;
 }
 
 
@@ -184,14 +194,32 @@ SYNTHESIZE(preset);
 
 }
 
-- (IBAction)playButtonClicked:(id)sender {
-    if ([self.player isPlaying]) {
-        [self.player stop];
-    } else {
-        [self.player playWithSoundName:@"sea"];
-    }
+#pragma mark - iAd
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+    [UIView animateWithDuration:0.25 animations:^{
+        [self.view setNeedsLayout];
+        [self.view layoutIfNeeded];
+    }];
 }
 
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+    [UIView animateWithDuration:0.25 animations:^{
+        [self.view setNeedsLayout];
+        [self.view layoutIfNeeded];
+    }];
+}
 
+- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:BannerViewActionWillBegin object:self];
+    return YES;
+}
+
+- (void)bannerViewActionDidFinish:(ADBannerView *)banner
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:BannerViewActionDidFinish object:self];
+}
 
 @end

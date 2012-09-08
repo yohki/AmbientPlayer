@@ -38,7 +38,6 @@
 		7EDE0C0F15FB238600789400 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EDE0C0E15FB238600789400 /* iPad.storyboard */; };
 		7EDE0C1215FB2C4300789400 /* APSoundEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDE0C1115FB2C4300789400 /* APSoundEntry.m */; };
 		AF4E5D0B15FB376A001438B3 /* APRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4E5D0A15FB376A001438B3 /* APRecordViewController.m */; };
-		AF4E5D2315FB7514001438B3 /* APBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4E5D2215FB7514001438B3 /* APBannerViewController.m */; };
 		AF57FF4015FB114000D8040A /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF57FF3F15FB114000D8040A /* iAd.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,8 +92,6 @@
 		7EDE0C1115FB2C4300789400 /* APSoundEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APSoundEntry.m; sourceTree = "<group>"; };
 		AF4E5D0915FB376A001438B3 /* APRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APRecordViewController.h; sourceTree = "<group>"; };
 		AF4E5D0A15FB376A001438B3 /* APRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APRecordViewController.m; sourceTree = "<group>"; };
-		AF4E5D2115FB7514001438B3 /* APBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APBannerViewController.h; sourceTree = "<group>"; };
-		AF4E5D2215FB7514001438B3 /* APBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APBannerViewController.m; sourceTree = "<group>"; };
 		AF57FF3F15FB114000D8040A /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -192,8 +189,6 @@
 			children = (
 				40A2069E15F67790004BE2E1 /* APAppDelegate.h */,
 				40A2069F15F67790004BE2E1 /* APAppDelegate.m */,
-				AF4E5D2115FB7514001438B3 /* APBannerViewController.h */,
-				AF4E5D2215FB7514001438B3 /* APBannerViewController.m */,
 				7EDE0C0215FB108200789400 /* APCrossFadePlayer.h */,
 				7EDE0C0315FB108200789400 /* APCrossFadePlayer.m */,
 				7EDE0C1015FB2C4300789400 /* APSoundEntry.h */,
@@ -366,7 +361,6 @@
 				7EDE0C0415FB108200789400 /* APCrossFadePlayer.m in Sources */,
 				7EDE0C1215FB2C4300789400 /* APSoundEntry.m in Sources */,
 				AF4E5D0B15FB376A001438B3 /* APRecordViewController.m in Sources */,
-				AF4E5D2315FB7514001438B3 /* APBannerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
