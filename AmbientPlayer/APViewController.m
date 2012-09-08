@@ -12,12 +12,39 @@
 
 @end
 
-@implementation APViewController
+@implementation APViewController {
+    ADBannerView *_bannerView;
+}
+
+@synthesize contentView = _contentView;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        _bannerView = [[ADBannerView alloc] init];
+        _bannerView.delegate = self;
+        CGRect banner_frame = _bannerView.frame;
+        banner_frame.origin.y = 400;
+        _bannerView.frame = banner_frame;
+    }
+    return self;
+}
+
+- (void)dealloc
+{
+    _bannerView.delegate = nil;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    
+    
+    //add iAd BannerView as subview
+    [self.view addSubview:_bannerView];
     
     _session = [AVAudioSession sharedInstance];
     NSError* errRet = nil;
@@ -38,6 +65,7 @@
     // Release any retained subviews of the main view.
 }
 
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
@@ -50,5 +78,7 @@
 - (IBAction)playButtonClicked:(id)sender {
     [_player play];
 }
+
+
 
 @end

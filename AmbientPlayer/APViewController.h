@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import <iAd/iAd.h>
 
-@interface APViewController : UIViewController {
+@interface APViewController : UIViewController <ADBannerViewDelegate>{
     IBOutlet UIButton* _playButton;
     AVAudioSession* _session;
     AVAudioPlayer* _player;
 }
+
+@property(nonatomic, strong) IBOutlet UIView *contentView;
 
 - (IBAction) playButtonClicked: (id)sender;
 
