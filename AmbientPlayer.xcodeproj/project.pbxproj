@@ -17,8 +17,6 @@
 		40A2069C15F67790004BE2E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A2069B15F67790004BE2E1 /* main.m */; };
 		40A206A015F67790004BE2E1 /* APAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A2069F15F67790004BE2E1 /* APAppDelegate.m */; };
 		40A206A315F67790004BE2E1 /* APViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A206A215F67790004BE2E1 /* APViewController.m */; };
-		40A206A615F67790004BE2E1 /* APViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40A206A415F67790004BE2E1 /* APViewController_iPhone.xib */; };
-		40A206A915F67791004BE2E1 /* APViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40A206A715F67791004BE2E1 /* APViewController_iPad.xib */; };
 		40A206B115F67791004BE2E1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A206B015F67791004BE2E1 /* SenTestingKit.framework */; };
 		40A206B215F67791004BE2E1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A2068F15F67790004BE2E1 /* UIKit.framework */; };
 		40A206B315F67791004BE2E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A2069115F67790004BE2E1 /* Foundation.framework */; };
@@ -26,9 +24,11 @@
 		40A206BE15F67791004BE2E1 /* AmbientPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A206BD15F67791004BE2E1 /* AmbientPlayerTests.m */; };
 		40A206C815F67C19004BE2E1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A206C715F67C19004BE2E1 /* AVFoundation.framework */; };
 		40A206D715F682E0004BE2E1 /* ocean.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 40A206D615F682E0004BE2E1 /* ocean.m4a */; };
-		AF57FF4015FB114000D8040A /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF57FF3F15FB114000D8040A /* iAd.framework */; };
 		7EDE0C0415FB108200789400 /* APCrossFadePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDE0C0315FB108200789400 /* APCrossFadePlayer.m */; };
 		7EDE0C0615FB180000789400 /* sea.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7EDE0C0515FB180000789400 /* sea.m4a */; };
+		7EDE0C0C15FB234C00789400 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EDE0C0B15FB234C00789400 /* iPhone.storyboard */; };
+		7EDE0C0F15FB238600789400 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EDE0C0E15FB238600789400 /* iPad.storyboard */; };
+		AF57FF4015FB114000D8040A /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF57FF3F15FB114000D8040A /* iAd.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +57,6 @@
 		40A2069F15F67790004BE2E1 /* APAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APAppDelegate.m; sourceTree = "<group>"; };
 		40A206A115F67790004BE2E1 /* APViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APViewController.h; sourceTree = "<group>"; };
 		40A206A215F67790004BE2E1 /* APViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APViewController.m; sourceTree = "<group>"; };
-		40A206A515F67790004BE2E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/APViewController_iPhone.xib; sourceTree = "<group>"; };
-		40A206A815F67791004BE2E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/APViewController_iPad.xib; sourceTree = "<group>"; };
 		40A206AF15F67791004BE2E1 /* AmbientPlayerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AmbientPlayerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40A206B015F67791004BE2E1 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		40A206B815F67791004BE2E1 /* AmbientPlayerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AmbientPlayerTests-Info.plist"; sourceTree = "<group>"; };
@@ -70,6 +68,8 @@
 		7EDE0C0215FB108200789400 /* APCrossFadePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APCrossFadePlayer.h; sourceTree = "<group>"; };
 		7EDE0C0315FB108200789400 /* APCrossFadePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APCrossFadePlayer.m; sourceTree = "<group>"; };
 		7EDE0C0515FB180000789400 /* sea.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = sea.m4a; sourceTree = "<group>"; };
+		7EDE0C0B15FB234C00789400 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
+		7EDE0C0E15FB238600789400 /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = iPad.storyboard; path = ../iPad.storyboard; sourceTree = "<group>"; };
 		AF57FF3F15FB114000D8040A /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -154,8 +154,8 @@
 				7EDE0C0315FB108200789400 /* APCrossFadePlayer.m */,
 				40A206A115F67790004BE2E1 /* APViewController.h */,
 				40A206A215F67790004BE2E1 /* APViewController.m */,
-				40A206A715F67791004BE2E1 /* APViewController_iPad.xib */,
-				40A206A415F67790004BE2E1 /* APViewController_iPhone.xib */,
+				7EDE0C0E15FB238600789400 /* iPad.storyboard */,
+				7EDE0C0B15FB234C00789400 /* iPhone.storyboard */,
 				40A2069615F67790004BE2E1 /* Supporting Files */,
 			);
 			path = AmbientPlayer;
@@ -264,13 +264,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				40A2069A15F67790004BE2E1 /* InfoPlist.strings in Resources */,
-				40A206A615F67790004BE2E1 /* APViewController_iPhone.xib in Resources */,
-				40A206A915F67791004BE2E1 /* APViewController_iPad.xib in Resources */,
 				40A206D715F682E0004BE2E1 /* ocean.m4a in Resources */,
 				4018F06815F6D00600DB5B15 /* forest.m4a in Resources */,
 				4018F06915F6D00600DB5B15 /* rain.m4a in Resources */,
 				4018F06A15F6D00600DB5B15 /* stream.m4a in Resources */,
 				7EDE0C0615FB180000789400 /* sea.m4a in Resources */,
+				7EDE0C0C15FB234C00789400 /* iPhone.storyboard in Resources */,
+				7EDE0C0F15FB238600789400 /* iPad.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,22 +337,6 @@
 				40A2069915F67790004BE2E1 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		40A206A415F67790004BE2E1 /* APViewController_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				40A206A515F67790004BE2E1 /* en */,
-			);
-			name = APViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		40A206A715F67791004BE2E1 /* APViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				40A206A815F67791004BE2E1 /* en */,
-			);
-			name = APViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 		40A206B915F67791004BE2E1 /* InfoPlist.strings */ = {

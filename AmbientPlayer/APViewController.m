@@ -30,13 +30,25 @@ SYNTHESIZE(player);
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        _bannerView = [[ADBannerView alloc] init];
-        _bannerView.delegate = self;
-        CGRect banner_frame = _bannerView.frame;
-        banner_frame.origin.y = 400;
-        _bannerView.frame = banner_frame;
+        [self initBanner];
     }
     return self;
+}
+
+-(id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self initBanner];
+    }
+    return self;
+}
+
+-(void)initBanner {
+    _bannerView = [[ADBannerView alloc] init];
+    _bannerView.delegate = self;
+    CGRect banner_frame = _bannerView.frame;
+    banner_frame.origin.y = 350;
+    _bannerView.frame = banner_frame;
 }
 
 - (void)dealloc
