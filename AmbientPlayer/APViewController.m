@@ -132,8 +132,15 @@ SYNTHESIZE(preset);
             return cell;
         }
         case 1:
-            // TODO
-            return nil;
+        {
+            // TODO 今は、「追加」のセルだけを作っているけど、追加した音声も作るようにする
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+            if(!cell) {
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+            }
+            cell.textLabel.text = @"追加";
+            return cell;
+        }
         default:
             NSAssert(NO, @"This line should not be reached");
             return nil;
@@ -146,7 +153,7 @@ SYNTHESIZE(preset);
             return self.preset.count;
         case 1:
             // TODO
-            return 0;
+            return 1;
         default:
             NSAssert(NO, @"This line should not be reached");
             return 0;
@@ -163,7 +170,7 @@ SYNTHESIZE(preset);
             [self.player playWithSoundName:entry.fileName];
         }
         case 1:
-            // TODO
+            // TODO 「追加」のセルだった場合、録音用画面を呼び出すようにする
             return;
         default:
             NSAssert(NO, @"This line should not be reached");
