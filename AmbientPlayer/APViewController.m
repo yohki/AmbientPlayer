@@ -15,10 +15,15 @@
 @property (nonatomic, strong) APCrossFadePlayer *player;
 @end
 
+#define SYNTHESIZE(propertyName) @synthesize propertyName = _ ## propertyName
+
+
 @implementation APViewController {
     ADBannerView *_bannerView;
 }
 
+SYNTHESIZE(session);
+SYNTHESIZE(player);
 @synthesize contentView = _contentView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -38,9 +43,6 @@
 {
     _bannerView.delegate = nil;
 }
-
-SYNTHESIZE(session);
-SYNTHESIZE(player);
 
 - (void)viewDidLoad
 {
