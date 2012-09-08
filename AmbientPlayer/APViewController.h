@@ -12,8 +12,6 @@
 
 @interface APViewController : UIViewController <ADBannerViewDelegate>{
     IBOutlet UIButton* _playButton;
-    AVAudioSession* _session;
-    AVAudioPlayer* _player;
 }
 
 @property(nonatomic, strong) IBOutlet UIView *contentView;

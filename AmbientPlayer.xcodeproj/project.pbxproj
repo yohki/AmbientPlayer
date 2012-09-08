@@ -98,9 +98,10 @@
 			isa = PBXGroup;
 			children = (
 				4018F06515F6D00600DB5B15 /* forest.m4a */,
-				4018F06615F6D00600DB5B15 /* rain.m4a */,
-				4018F06715F6D00600DB5B15 /* stream.m4a */,
 				40A206D615F682E0004BE2E1 /* ocean.m4a */,
+				4018F06615F6D00600DB5B15 /* rain.m4a */,
+				7EDE0C0515FB180000789400 /* sea.m4a */,
+				4018F06715F6D00600DB5B15 /* stream.m4a */,
 			);
 			name = sounds;
 			path = sound;
@@ -144,10 +145,12 @@
 			children = (
 				40A2069E15F67790004BE2E1 /* APAppDelegate.h */,
 				40A2069F15F67790004BE2E1 /* APAppDelegate.m */,
+				7EDE0C0215FB108200789400 /* APCrossFadePlayer.h */,
+				7EDE0C0315FB108200789400 /* APCrossFadePlayer.m */,
 				40A206A115F67790004BE2E1 /* APViewController.h */,
 				40A206A215F67790004BE2E1 /* APViewController.m */,
-				40A206A415F67790004BE2E1 /* APViewController_iPhone.xib */,
 				40A206A715F67791004BE2E1 /* APViewController_iPad.xib */,
+				40A206A415F67790004BE2E1 /* APViewController_iPhone.xib */,
 				40A2069615F67790004BE2E1 /* Supporting Files */,
 			);
 			path = AmbientPlayer;
@@ -262,6 +265,7 @@
 				4018F06815F6D00600DB5B15 /* forest.m4a in Resources */,
 				4018F06915F6D00600DB5B15 /* rain.m4a in Resources */,
 				4018F06A15F6D00600DB5B15 /* stream.m4a in Resources */,
+				7EDE0C0615FB180000789400 /* sea.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +303,7 @@
 				40A2069C15F67790004BE2E1 /* main.m in Sources */,
 				40A206A015F67790004BE2E1 /* APAppDelegate.m in Sources */,
 				40A206A315F67790004BE2E1 /* APViewController.m in Sources */,
+				7EDE0C0415FB108200789400 /* APCrossFadePlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
