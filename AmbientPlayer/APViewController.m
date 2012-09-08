@@ -57,11 +57,11 @@ SYNTHESIZE(preset);
 
 -(void)initPreset {
     self.preset = [NSArray arrayWithObjects:
-                   [[APSoundEntry alloc] initPresetWithTitle:@"Forest" withFileName:@"forest"],
-                   [[APSoundEntry alloc] initPresetWithTitle:@"Ocean" withFileName:@"ocean"],
-                   [[APSoundEntry alloc] initPresetWithTitle:@"Rain" withFileName:@"rain"],
-                   [[APSoundEntry alloc] initPresetWithTitle:@"Sea" withFileName:@"sea"],
-                   [[APSoundEntry alloc] initPresetWithTitle:@"Stream" withFileName:@"stream"],
+                   [[APSoundEntry alloc] initPresetWithTitle:@"Forest" withFileName:@"forest" andImageFileName:@"forest"],
+                   [[APSoundEntry alloc] initPresetWithTitle:@"Ocean" withFileName:@"ocean" andImageFileName:@"ocean"],
+                   [[APSoundEntry alloc] initPresetWithTitle:@"Rain" withFileName:@"rain" andImageFileName:@"rain"],
+                   [[APSoundEntry alloc] initPresetWithTitle:@"Sea" withFileName:@"sea" andImageFileName:@"sea"],
+                   [[APSoundEntry alloc] initPresetWithTitle:@"Stream" withFileName:@"stream" andImageFileName:@"stream"],
                    nil];
 }
 
@@ -129,6 +129,11 @@ SYNTHESIZE(preset);
                 cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
             }
             cell.textLabel.text = entry.title;
+            if (entry.imageFileName) {
+                NSString *path = [[NSBundle mainBundle] pathForResource:entry.imageFileName ofType:@"jpg"];
+                UIImage *img = [UIImage imageWithContentsOfFile:path];
+                cell.imageView.image = img;
+            }
             return cell;
         }
         case 1:
